@@ -8,6 +8,16 @@
 [![Anchore Image Overview](https://anchore.io/service/badges/image/af41b351247fc340958e9c67aed342860da328339257f809c043c865679d981d)](https://anchore.io/image/dockerhub/kylemanna%2Fopenvpn%3Alatest)
 
 
+#### Iving OpenVPN
+
+```bash
+make build
+make init
+docker-compose up
+```
+
+#### OpenVPN
+
 OpenVPN server in a Docker container complete with an EasyRSA PKI CA.
 
 Extensively tested on [Digital Ocean $5/mo node](http://bit.ly/1C7cKr3) and has

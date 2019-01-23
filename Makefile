@@ -2,35 +2,20 @@
 .PHONY: all
 all: build
 
-.PHONY: dist
-dist: submodule
-	if [ ! -d "node_modules" ]; then npm install; fi
-	if [ ! -f ".flowconfig" ]; then npm run flow init; fi
-	npm run webpack
-
 .PHONY: build
-build: submodule
-	if [ ! -d "node_modules" ]; then npm install; fi
-	if [ ! -f ".flowconfig" ]; then npm run flow init; fi
-	npm run flow && npm run build
+build:
+	docker build -f Dockerfile -t ryanrhymes/iving_openvpn:alpine .
+	docker push ryanrhymes/iving_openvpn:alpine
 
-.PHONY: local
-local:
-	if [ ! -d "node_modules" ]; then npm install; fi
-	if [ ! -f ".flowconfig" ]; then npm run flow init; fi
-	npm run flow && npm run build
-
-.PHONY: start
-start: build
-	npm run start
+.PHONY: init
+init:
+	docker volume create iving_openvpn_data
+	docker run -v iving_openvpn_data:/etc/openvpn --log-driver=none --rm ryanrhymes/iving_openvpn:alpine ovpn_genconfig -u udp://${IVING_OPENVPN_SERVER_URL}
+	docker run -v iving_openvpn_data:/etc/openvpn --log-driver=none --rm -it ryanrhymes/iving_openvpn:alpine ovpn_initpki
 
 .PHONY: clean
 clean:
 	$(RM) -r build dist
-
-.PHONY: cleanall
-cleanall: clean
-	$(RM) -r node_modules
 
 .PHONY: push
 push:

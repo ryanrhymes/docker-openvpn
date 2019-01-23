@@ -1,14 +1,15 @@
 version: '3'
+
 services:
   openvpn:
-    image: kylemanna/openvpn
+    image: ryanrhymes/iving_openvpn:alpine
     volumes:
        - data:/etc/openvpn
     ports:
       - 1194:1194/udp
-    #cap_add:
-    #  - NET_ADMIN
-    entrypoint: ovpn_genconfig -u udp://VPN.SERVERNAME.COM
+    cap_add:
+      - NET_ADMIN
+    entrypoint: iving_start
 
 volumes:
   data:
