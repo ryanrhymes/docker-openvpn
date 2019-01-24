@@ -13,6 +13,11 @@ init:
 	docker run -v iving_openvpn_data:/etc/openvpn --log-driver=none --rm ryanrhymes/iving_openvpn:alpine ovpn_genconfig -u udp://${IVING_OPENVPN_SERVER_URL}
 	docker run -v iving_openvpn_data:/etc/openvpn --log-driver=none --rm -it ryanrhymes/iving_openvpn:alpine ovpn_initpki
 
+.PHONY: liang
+liang:
+	docker run -v iving_openvpn_data:/etc/openvpn --log-driver=none --rm -it ryanrhymes/iving_openvpn:alpine easyrsa build-client-full liang nopass
+	docker run -v iving_openvpn_data:/etc/openvpn --log-driver=none --rm ryanrhymes/iving_openvpn:alpine ovpn_getclient liang > liang.ovpn
+
 .PHONY: clean
 clean:
 	docker-compose down
