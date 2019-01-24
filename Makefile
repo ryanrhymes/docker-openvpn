@@ -7,12 +7,6 @@ build:
 	docker build -f Dockerfile -t ryanrhymes/iving_openvpn:alpine .
 	docker push ryanrhymes/iving_openvpn:alpine
 
-.PHONY: init
-init:
-	docker volume create iving_openvpn_data
-	docker run -v iving_openvpn_data:/etc/openvpn --log-driver=none --rm ryanrhymes/iving_openvpn:alpine ovpn_genconfig -u udp://${IVING_OPENVPN_SERVER_URL}
-	docker run -v iving_openvpn_data:/etc/openvpn --log-driver=none --rm -it ryanrhymes/iving_openvpn:alpine ovpn_initpki
-
 .PHONY: liang
 liang:
 	docker run -v iving_openvpn_data:/etc/openvpn --log-driver=none --rm -it ryanrhymes/iving_openvpn:alpine easyrsa build-client-full liang nopass
