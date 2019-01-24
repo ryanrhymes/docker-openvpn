@@ -3,4 +3,5 @@
 ## @author Copyright (C) 2015 Liang Wang <liang.wang@cl.cam.ac.uk>
 
 echo "Iving OpenVPN Access Server"
+ls /etc/openvpn/
 ovpn_run

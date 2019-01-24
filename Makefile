@@ -15,7 +15,8 @@ init:
 
 .PHONY: clean
 clean:
-	$(RM) -r build dist
+	docker-compose down
+	docker volume rm iving_openvpn_data
 
 .PHONY: push
 push:
