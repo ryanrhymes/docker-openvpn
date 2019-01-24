@@ -5,7 +5,7 @@
 echo "Iving OpenVPN Access Server"
 
 echo "config ${IVING_OPENVPN_SERVER_URL}"
-ovpn_genconfig
+ovpn_genconfig -u udp://${IVING_OPENVPN_SERVER_URL}
 
 if [ ! -f "${OPENVPN}/pki/crl.pem" ]; then
     echo -e "OpenVPN has not been Initialised, you should run the following command:"
