@@ -10,7 +10,7 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      - IVING_OPENVPN_SERVER_URL=0
+      - IVING_OPENVPN_SERVER_URL=vpn.komposio.com
     entrypoint: iving_start
 
 volumes:

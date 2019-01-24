@@ -4,10 +4,10 @@
 
 echo "Iving OpenVPN Access Server"
 
-echo "config ${IVING_OPENVPN_SERVER_URL}"
-ovpn_genconfig -u udp://${IVING_OPENVPN_SERVER_URL}
-
 if [ ! -f "${OPENVPN}/pki/crl.pem" ]; then
+    echo "config udp://${IVING_OPENVPN_SERVER_URL}"
+    ovpn_genconfig -u udp://${IVING_OPENVPN_SERVER_URL}
+  
     echo -e "OpenVPN has not been Initialised, you should run the following command:"
     echo -e "\tdocker run -v iving_openvpn_data:/etc/openvpn --log-driver=none --rm -it ryanrhymes/iving_openvpn:alpine ovpn_initpki"
     exit 1
