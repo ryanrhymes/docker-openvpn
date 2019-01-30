@@ -16,6 +16,15 @@ make init
 docker-compose up
 ```
 
+
+## Ports
+
+The following ports need to be open.
+
+- 1194/udp
+- 22/tcp
+
+
 #### OpenVPN
 
 OpenVPN server in a Docker container complete with an EasyRSA PKI CA.
