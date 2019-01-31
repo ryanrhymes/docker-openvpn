@@ -7,7 +7,7 @@ echo "Iving OpenVPN Access Server"
 if [ ! -f "${OPENVPN}/pki/crl.pem" ]; then
     echo -e "OpenVPN has not been initialised, run the following commands:\n"
     echo -e "\tdocker run -v iving_openvpn_data:/etc/openvpn --log-driver=none --rm ryanrhymes/iving_openvpn:alpine ovpn_genconfig -u udp://OPENVPN_SERVER_URL"
-    echo -e "\tdocker run -v iving_openvpn_data:/etc/openvpn --log-driver=none --rm -it ryanrhymes/iving_openvpn:alpine ovpn_initpki\n"
+    echo -e "\tdocker run -v iving_openvpn_data:/etc/openvpn --log-driver=none --rm -it ryanrhymes/iving_openvpn:alpine ovpn_initpki nopass\n"
     exit 1
 fi
 

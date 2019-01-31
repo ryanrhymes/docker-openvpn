@@ -15,7 +15,9 @@ liang:
 .PHONY: clean
 clean:
 	docker-compose down
-	docker volume rm iving_openvpn_data
+	docker rm $(docker stop $(docker ps -a -q --filter ancestor=iving_openvpn --format="{{.ID}}"))
+	docker rmi $(docker images -q --filter=reference="ryanrhymes/iving_openvpn*") --force
+	#docker volume rm iving_openvpn_data
 
 .PHONY: push
 push:
