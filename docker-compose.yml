@@ -1,9 +1,8 @@
 version: '3'
 
 services:
-  openvpn:
-    build:
-      .
+  server:
+    build: .
     volumes:
        - data:/etc/openvpn
     ports:
