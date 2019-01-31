@@ -1,0 +1,87 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            f1:85:a9:d0:4a:c9:ba:91:af:1b:9c:89:75:3c:90:d5
+    Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN=komposio.com
+        Validity
+            Not Before: Jan 31 23:46:55 2019 GMT
+            Not After : Jan 15 23:46:55 2022 GMT
+        Subject: CN=iving
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:a2:19:68:10:a7:06:f9:61:59:c8:4e:99:38:a7:
+                    57:44:8a:c5:ba:a8:93:44:8c:97:b2:fc:49:af:f7:
+                    39:d1:7a:e2:59:3e:07:76:88:89:a4:19:44:c2:51:
+                    65:26:74:fc:ed:e0:2c:16:72:81:bb:d9:fc:d7:21:
+                    50:44:cf:9f:80:d0:21:c0:a0:cd:d4:8c:7d:cb:4b:
+                    dc:b9:d7:8d:1b:01:bf:1b:ad:af:cb:42:2b:80:20:
+                    ad:77:05:a8:5a:01:19:c2:d6:b0:36:7b:1f:21:bd:
+                    e5:eb:e0:52:38:4f:d0:59:f8:de:69:e5:6e:f3:1a:
+                    cd:73:4e:26:6b:1b:6d:2d:dc:71:d4:23:f1:7a:a1:
+                    b0:35:eb:6f:92:6e:2a:bf:7d:75:f1:fe:18:b4:72:
+                    aa:f7:00:02:97:c4:c9:2a:07:c8:18:fa:a7:9a:89:
+                    8c:08:05:2a:da:66:52:c9:24:3c:53:e5:87:ed:c6:
+                    0d:fb:3f:3f:db:00:5b:7d:7a:70:c4:64:01:c0:77:
+                    a5:20:eb:ad:dd:4a:ad:68:6b:86:95:e4:8d:b0:31:
+                    02:aa:f3:ba:06:54:d1:70:3e:bd:a6:d7:1a:ec:d5:
+                    6d:5e:a7:a4:1b:f4:87:e6:b3:fc:f2:d3:65:ca:bb:
+                    46:08:2d:b7:4e:89:96:16:42:11:33:f7:e3:77:30:
+                    11:2b
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                4A:21:4B:C8:D1:A2:40:65:98:17:35:45:E1:1A:C8:09:4C:8C:26:84
+            X509v3 Authority Key Identifier: 
+                keyid:81:0B:52:9A:7C:9B:08:0F:35:1E:E6:FD:06:D4:5C:6B:2D:EB:3C:52
+                DirName:/CN=komposio.com
+                serial:A5:3D:BC:E7:F9:42:0E:D0
+
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication
+            X509v3 Key Usage: 
+                Digital Signature, Key Encipherment
+            X509v3 Subject Alternative Name: 
+                DNS:iving
+    Signature Algorithm: sha256WithRSAEncryption
+         90:fe:a7:ce:76:06:1d:28:f9:c1:65:46:7d:3d:a6:3f:98:85:
+         d6:73:77:78:4c:b4:6e:bf:b5:a4:8a:e9:72:26:d5:75:fc:06:
+         d2:21:b1:71:f6:a8:8d:35:61:e7:60:97:d4:bb:a3:88:e8:02:
+         6f:ab:8a:5b:98:af:81:8f:ee:af:32:e5:e5:54:b5:5c:c7:47:
+         63:5d:fa:5b:ef:d3:3c:9a:8e:4f:23:1a:40:18:03:15:a9:4b:
+         02:e5:dc:73:05:0c:62:90:d3:35:0c:c8:78:7a:1d:46:38:d7:
+         b5:93:0f:0e:31:33:79:d1:27:4e:b4:9f:8c:7b:fb:e0:1f:19:
+         28:be:8c:f1:85:3d:54:d1:e9:86:9f:4a:a5:03:db:5f:8e:40:
+         67:35:d6:16:44:50:ac:c3:53:08:e8:28:71:24:08:e7:53:b7:
+         f2:88:62:18:f1:1a:ff:32:b8:fc:44:65:f7:f3:8a:63:d9:8c:
+         79:3d:26:f4:90:5a:08:05:d4:b5:f1:b9:08:a5:05:14:78:f4:
+         d4:2c:41:46:e0:ab:7d:e1:94:1b:a2:31:64:45:05:98:51:8e:
+         ce:73:d0:cd:8b:11:2f:30:b2:e3:c5:89:07:87:4a:e4:4d:b3:
+         5f:9f:93:dd:41:43:9a:52:f2:11:84:bf:b1:26:36:92:22:36:
+         7f:69:be:f3
+-----BEGIN CERTIFICATE-----
+MIIDXTCCAkWgAwIBAgIRAPGFqdBKybqRrxuciXU8kNUwDQYJKoZIhvcNAQELBQAw
+FzEVMBMGA1UEAwwMa29tcG9zaW8uY29tMB4XDTE5MDEzMTIzNDY1NVoXDTIyMDEx
+NTIzNDY1NVowEDEOMAwGA1UEAwwFaXZpbmcwggEiMA0GCSqGSIb3DQEBAQUAA4IB
+DwAwggEKAoIBAQCiGWgQpwb5YVnITpk4p1dEisW6qJNEjJey/Emv9znReuJZPgd2
+iImkGUTCUWUmdPzt4CwWcoG72fzXIVBEz5+A0CHAoM3UjH3LS9y5140bAb8bra/L
+QiuAIK13BahaARnC1rA2ex8hveXr4FI4T9BZ+N5p5W7zGs1zTiZrG20t3HHUI/F6
+obA162+Sbiq/fXXx/hi0cqr3AAKXxMkqB8gY+qeaiYwIBSraZlLJJDxT5Yftxg37
+Pz/bAFt9enDEZAHAd6Ug663dSq1oa4aV5I2wMQKq87oGVNFwPr2m1xrs1W1ep6Qb
+9Ifms/zy02XKu0YILbdOiZYWQhEz9+N3MBErAgMBAAGjgaowgacwCQYDVR0TBAIw
+ADAdBgNVHQ4EFgQUSiFLyNGiQGWYFzVF4RrICUyMJoQwRwYDVR0jBEAwPoAUgQtS
+mnybCA81Hub9BtRcay3rPFKhG6QZMBcxFTATBgNVBAMMDGtvbXBvc2lvLmNvbYIJ
+AKU9vOf5Qg7QMBMGA1UdJQQMMAoGCCsGAQUFBwMBMAsGA1UdDwQEAwIFoDAQBgNV
+HREECTAHggVpdmluZzANBgkqhkiG9w0BAQsFAAOCAQEAkP6nznYGHSj5wWVGfT2m
+P5iF1nN3eEy0br+1pIrpcibVdfwG0iGxcfaojTVh52CX1LujiOgCb6uKW5ivgY/u
+rzLl5VS1XMdHY136W+/TPJqOTyMaQBgDFalLAuXccwUMYpDTNQzIeHodRjjXtZMP
+DjEzedEnTrSfjHv74B8ZKL6M8YU9VNHphp9KpQPbX45AZzXWFkRQrMNTCOgocSQI
+51O38ohiGPEa/zK4/ERl9/OKY9mMeT0m9JBaCAXUtfG5CKUFFHj01CxBRuCrfeGU
+G6IxZEUFmFGOznPQzYsRLzCy48WJB4dK5E2zX5+T3UFDmlLyEYS/sSY2kiI2f2m+
+8w==
+-----END CERTIFICATE-----

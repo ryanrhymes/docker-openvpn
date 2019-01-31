@@ -3,8 +3,6 @@
 # Smallest base image
 FROM alpine:latest
 
-LABEL maintainer="Kyle Manna <kyle@kylemanna.com>"
-
 # Testing: pamtester
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories && \
     apk add --update openvpn iptables bash easy-rsa openvpn-auth-pam google-authenticator pamtester && \
@@ -20,15 +18,14 @@ ENV EASYRSA_VARS_FILE $OPENVPN/vars
 # Prevents refused client connection because of an expired CRL
 ENV EASYRSA_CRL_DAYS 3650
 
-VOLUME ["/etc/openvpn"]
-
-# Internally uses port 1194/udp, remap using `docker run -p 443:1194/tcp`
-EXPOSE 1194/udp
-
-### CMD ["ovpn_run"]
-
 ADD ./bin /usr/local/bin
 RUN chmod a+x /usr/local/bin/*
 
 # Add support for OTP authentication using a PAM module
 ADD ./otp/openvpn /etc/pam.d/
+
+# Copy sensitive configuration files
+## COPY ./conf/openvpn $OPENVPN
+COPY ./template/openvpn $OPENVPN
+RUN chmod 0600 $EASYRSA_PKI/private/*
+RUN chmod 0600 $EASYRSA_PKI/ta.key
