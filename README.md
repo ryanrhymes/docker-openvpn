@@ -10,10 +10,16 @@
 
 #### Iving OpenVPN
 
+To start the server, simply run the following command
+
 ```bash
-make build
-make init
-docker-compose up
+./tool/start.sh
+```
+
+To build and push the image, run the following command
+
+```bash
+make
 ```
 
 
