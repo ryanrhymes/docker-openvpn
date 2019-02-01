@@ -25,7 +25,6 @@ RUN chmod a+x /usr/local/bin/*
 ADD ./otp/openvpn /etc/pam.d/
 
 # Copy sensitive configuration files
-## COPY ./conf/openvpn $OPENVPN
-COPY ./template/openvpn $OPENVPN
+COPY ./conf/openvpn $OPENVPN
 RUN chmod 0600 $EASYRSA_PKI/private/*
 RUN chmod 0600 $EASYRSA_PKI/ta.key
