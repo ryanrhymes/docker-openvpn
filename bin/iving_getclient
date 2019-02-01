@@ -8,6 +8,6 @@ if [ -f "${EASYRSA_PKI}/reqs/${USERNAME}.req" ]
 then
 	ovpn_getclient ${USERNAME}
 else
-	easyrsa build-client-full ${USERNAME} nopass
+	easyrsa build-client-full ${USERNAME} nopass > /dev/null
   ovpn_getclient ${USERNAME}
 fi
