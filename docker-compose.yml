@@ -5,8 +5,10 @@ services:
     build: .
     expose:
       - 1194/udp
+      - 22223/tcp
     ports:
       - 1194:1194/udp
+      - 22223:22223/udp
     cap_add:
       - NET_ADMIN
     entrypoint: iving_start_vpn

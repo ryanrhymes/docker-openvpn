@@ -27,8 +27,8 @@ make
 
 The following ports need to be open.
 
-- 1194/udp
-- 22/tcp
+- 1194/udp   (for VPN)
+- 22223/tcp  (for SSH)
 
 
 #### OpenVPN
