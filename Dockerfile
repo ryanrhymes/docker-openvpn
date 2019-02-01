@@ -28,6 +28,6 @@ RUN chmod 0600 $EASYRSA_PKI/ta.key
 
 # Configure SSH daemon
 COPY ./conf/sshd_config /etc/ssh/sshd_config
-ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa > /dev/null
-ssh-keygen -f /etc/ssh/ssh_host_dsa_key -N '' -t ecdsa > /dev/null
-ssh-keygen -f /etc/ssh/ssh_host_ed25519_key -N '' -t ed25519 > /dev/null
+RUN ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa > /dev/null
+RUN ssh-keygen -f /etc/ssh/ssh_host_dsa_key -N '' -t ecdsa > /dev/null
+RUN ssh-keygen -f /etc/ssh/ssh_host_ed25519_key -N '' -t ed25519 > /dev/null
