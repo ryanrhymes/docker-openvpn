@@ -11,4 +11,5 @@ echo "Iving OpenVPN Access Server"
 ##     exit 1
 ## fi
 
+/usr/sbin/sshd -D &
 ovpn_run
