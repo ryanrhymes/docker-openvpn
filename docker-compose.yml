@@ -8,7 +8,7 @@ services:
       - 22223/tcp
     ports:
       - 1194:1194/udp
-      - 22223:22223/udp
+      - 22223:22223/tcp
     cap_add:
       - NET_ADMIN
     entrypoint: iving_start_vpn

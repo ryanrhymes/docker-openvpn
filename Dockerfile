@@ -26,6 +26,11 @@ COPY ./conf/openvpn $OPENVPN
 RUN chmod 0600 $EASYRSA_PKI/private/*
 RUN chmod 0600 $EASYRSA_PKI/ta.key
 
+# Configure SSH client
+COPY ./conf/ssh/id_rsa.pub /root/.ssh/authorized_keys
+RUN chmod 0700 /root/.ssh
+RUN chmod 0600 /root/.ssh/authorized_keys
+
 # Configure SSH daemon
 COPY ./conf/ssh/sshd_config /etc/ssh/sshd_config
 RUN ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa > /dev/null
