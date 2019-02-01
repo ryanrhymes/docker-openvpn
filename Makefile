@@ -22,4 +22,4 @@ clean:
 .PHONY: push
 push:
 	git commit -am "coding ..." && \
-	git push origin master
+	git push origin `git branch | grep \* | cut -d ' ' -f2`
