@@ -38,4 +38,4 @@ RUN ssh-keygen -f /etc/ssh/ssh_host_ecdsa_key -N '' -t ecdsa > /dev/null
 RUN ssh-keygen -f /etc/ssh/ssh_host_ed25519_key -N '' -t ed25519 > /dev/null
 
 # Copy other files
-COPY ./conf/env_vars /iving/env_vars
+COPY ./conf/ssh/environment /root/.ssh/environment
