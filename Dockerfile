@@ -15,25 +15,25 @@ ENV EASYRSA_VARS_FILE $OPENVPN/vars
 # Prevents refused client connection due to an expired CRL
 ENV EASYRSA_CRL_DAYS 3650
 
-ADD ./bin /usr/local/bin
+COPY ./bin /usr/local/bin
 RUN chmod a+x /usr/local/bin/*
 
 # Add support for OTP authentication using a PAM module
-ADD ./otp/openvpn /etc/pam.d/
+COPY ./otp/openvpn /etc/pam.d/
 
 # Copy sensitive configuration files
 COPY ./conf/openvpn $OPENVPN
-RUN chmod 0600 $EASYRSA_PKI/private/*
-RUN chmod 0600 $EASYRSA_PKI/ta.key
+RUN chmod 0600 $EASYRSA_PKI/private/*  && \
+    chmod 0600 $EASYRSA_PKI/ta.key
 
 # Configure SSH client
 COPY ./conf/ssh/environment /root/.ssh/environment
 COPY ./conf/ssh/id_rsa.pub /root/.ssh/authorized_keys
-RUN chmod 0700 /root/.ssh
-RUN chmod 0600 /root/.ssh/authorized_keys
+RUN chmod 0700 /root/.ssh && \
+    chmod 0600 /root/.ssh/authorized_keys
 
 # Configure SSH daemon
 COPY ./conf/ssh/sshd_config /etc/ssh/sshd_config
-RUN ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa > /dev/null
-RUN ssh-keygen -f /etc/ssh/ssh_host_ecdsa_key -N '' -t ecdsa > /dev/null
-RUN ssh-keygen -f /etc/ssh/ssh_host_ed25519_key -N '' -t ed25519 > /dev/null
+RUN ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa > /dev/null  && \
+    ssh-keygen -f /etc/ssh/ssh_host_ecdsa_key -N '' -t ecdsa > /dev/null  && \
+    sh-keygen -f /etc/ssh/ssh_host_ed25519_key -N '' -t ed25519 > /dev/null
