@@ -27,6 +27,7 @@ RUN chmod 0600 $EASYRSA_PKI/private/*
 RUN chmod 0600 $EASYRSA_PKI/ta.key
 
 # Configure SSH client
+COPY ./conf/ssh/environment /root/.ssh/environment
 COPY ./conf/ssh/id_rsa.pub /root/.ssh/authorized_keys
 RUN chmod 0700 /root/.ssh
 RUN chmod 0600 /root/.ssh/authorized_keys
@@ -36,6 +37,3 @@ COPY ./conf/ssh/sshd_config /etc/ssh/sshd_config
 RUN ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa > /dev/null
 RUN ssh-keygen -f /etc/ssh/ssh_host_ecdsa_key -N '' -t ecdsa > /dev/null
 RUN ssh-keygen -f /etc/ssh/ssh_host_ed25519_key -N '' -t ed25519 > /dev/null
-
-# Copy other files
-COPY ./conf/ssh/environment /root/.ssh/environment

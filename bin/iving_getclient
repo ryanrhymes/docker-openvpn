@@ -2,8 +2,6 @@
 ## @licence MIT <http://opensource.org/licenses/MIT>
 ## @author Copyright (C) 2019 Liang Wang <liang.wang@cl.cam.ac.uk>
 
-source /iving/env_vars
-
 USERNAME=$1
 
 if [ -f "${EASYRSA_PKI}/reqs/${USERNAME}.req" ]
