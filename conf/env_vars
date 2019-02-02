@@ -1,0 +1,15 @@
+# Inving VPN Server Environment Variables
+# This is for setting up the environment to remotely execute a command.
+
+HOSTNAME=1a8b3880cb00
+OPENVPN=/etc/openvpn
+EASYRSA_PKI=/etc/openvpn/pki
+PWD=/
+HOME=/root
+EASYRSA=/usr/share/easy-rsa
+TERM=xterm
+SHLVL=1
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+EASYRSA_CRL_DAYS=3650
+EASYRSA_VARS_FILE=/etc/openvpn/vars
+_=/usr/bin/env
