@@ -8,7 +8,7 @@
 # 2006-10-13 BDL original
 
 # replace with a sub-domain of your domain, use a sub-domain to
-prevent VPN clients from stealing existing names
+# prevent VPN clients from stealing existing names
 DOMAIN=vpn.example.net
 
 HOSTS=/etc/hosts.openvpn-clients
