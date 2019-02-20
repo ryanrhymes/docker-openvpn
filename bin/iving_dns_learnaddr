@@ -5,9 +5,9 @@
 # 2013-21-10 - Do not use absolute paths, to be more cross compatible
 #            - Add support for flock locking
 
-PATH=$PATH:/bin:/usr/bin
+echo "iving dns: passed in params - $1 $2 $3"
 
-echo "iving dns - $1 $2 $3"
+PATH=$PATH:/bin:/usr/bin
 
 # replace with a sub-domain of your domain, use a sub-domain to prevent VPN clients from stealing existing names
 DOMAIN=${DOMAIN:-"vpn.example.net"}
@@ -86,7 +86,8 @@ FQDN="$CN.$DOMAIN"
 ###  (command -v flock >/dev/null 2>&1 && false) ||
 ###  (command -v lock >/dev/null 2>&1 && (lock -u "$LOCKFILE"))
 ###  ) 200>$((command -v flock >/dev/null 2>&1 && (echo $LOCKFILE)) ||
-###        (command -v lock >/dev/null 2>&1 && (echo "/dev/null")))
+###        (command -v lock >/dev/null 2>&1 && (echo "/dev/null"))
+)
 
 # signal dnsmasq to reread hosts file
 ### [ -f $DNSMASQ ] && kill -HUP $(cat $DNSMASQ)
