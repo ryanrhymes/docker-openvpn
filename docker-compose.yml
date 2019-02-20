@@ -11,8 +11,9 @@ services:
     ports:
       - 1194:1194/udp
       - 22223:22223/tcp
-      - 53:53/udp
-      - 53:53/tcp
+      #- 53:53/udp
+      #- 53:53/tcp
+    network_mode: host
     cap_add:
       - NET_ADMIN
     entrypoint: iving_start_vpn

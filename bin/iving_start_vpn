@@ -11,6 +11,8 @@ echo "Iving OpenVPN Access Server"
 ##     exit 1
 ## fi
 
+## NOTE: some options need to be disabled in production network
+
 /usr/sbin/sshd -D &
-/usr/sbin/dnsmasq
+/usr/sbin/dnsmasq -d -q --dhcp-broadcast &
 ovpn_run
