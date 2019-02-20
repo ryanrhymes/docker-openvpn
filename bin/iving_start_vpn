@@ -13,11 +13,17 @@ echo "Iving OpenVPN Access Server"
 
 ## NOTE: some options need to be disabled in production network
 
+### start sshd service
+
 /usr/sbin/sshd -D &
-### /usr/sbin/dnsmasq -d -q --dhcp-broadcast &
+
+### set up learn_address script for dns
 
 touch /etc/hosts.openvpn-clients
 chmod 0644 /etc/hosts.openvpn-clients
 chown openvpn /etc/hosts.openvpn-clients
 chgrp openvpn /etc/hosts.openvpn-clients
+### /usr/sbin/dnsmasq -d -q --dhcp-broadcast &
+
+### start openvpn service
 ovpn_run
