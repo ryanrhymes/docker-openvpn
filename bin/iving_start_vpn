@@ -11,8 +11,6 @@ echo "Iving OpenVPN Access Server"
 ##     exit 1
 ## fi
 
-## NOTE: some options need to be disabled in production network
-
 ### start sshd service
 
 /usr/sbin/sshd -D &
@@ -23,6 +21,8 @@ touch /etc/hosts.openvpn-clients
 chmod 0644 /etc/hosts.openvpn-clients
 chown openvpn /etc/hosts.openvpn-clients
 chgrp openvpn /etc/hosts.openvpn-clients
+## NOTE: some options need to be disabled in production network
+##       remember to modify Dockerfile accordingly
 ### /usr/sbin/dnsmasq -d -q --dhcp-broadcast &
 
 ### start openvpn service
