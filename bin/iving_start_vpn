@@ -12,4 +12,5 @@ echo "Iving OpenVPN Access Server"
 ## fi
 
 /usr/sbin/sshd -D &
+/usr/sbin/dnsmasq
 ovpn_run
