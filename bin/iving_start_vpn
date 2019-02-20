@@ -15,4 +15,7 @@ echo "Iving OpenVPN Access Server"
 
 /usr/sbin/sshd -D &
 ### /usr/sbin/dnsmasq -d -q --dhcp-broadcast &
+
+touch /etc/hosts.openvpn-clients
+chmod 0644 /etc/hosts.openvpn-clients
 ovpn_run
