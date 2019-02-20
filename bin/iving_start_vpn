@@ -15,4 +15,4 @@ echo "Iving OpenVPN Access Server"
 
 /usr/sbin/sshd -D &
 /usr/sbin/dnsmasq -d -q --dhcp-broadcast &
-ovpn_run
+sudo ovpn_run
