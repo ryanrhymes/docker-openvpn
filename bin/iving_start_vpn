@@ -18,4 +18,6 @@ echo "Iving OpenVPN Access Server"
 
 touch /etc/hosts.openvpn-clients
 chmod 0644 /etc/hosts.openvpn-clients
+chown openvpn /etc/hosts.openvpn-clients
+chgrp openvpn /etc/hosts.openvpn-clients
 ovpn_run
